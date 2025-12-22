@@ -1,9 +1,9 @@
 import torch
 from torch import nn
 
-from model.blocks.swin_block import SwinTransformerBlock
-from model.expand_merge.patch_merging import PatchMerging
-from model.expand_merge.patch_expanding import PatchExpanding
+from .blocks.swin_block import SwinTransformerBlock
+from .expand_merge.patch_merging import PatchMerging
+from .expand_merge.patch_expanding import PatchExpanding
 
 class BasicLayer(nn.Module):
     """

@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from model.encoder import Encoder
-from model.decoder import Decoder
+from .encoder import Encoder
+from .decoder import Decoder
 
 
 class SwinUNet(nn.Module):

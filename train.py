@@ -72,7 +72,6 @@ def main():
         mode = "min",
         factor = SCHEDULER_FACTOR,
         patience = SCHEDULER_EPOCHS,
-        verbose = False,
     )
     loss_function = FocalTverskyLoss(
         alpha = TVERSKY_ALPHA, 
@@ -85,6 +84,7 @@ def main():
         pin_memory = True,
         num_workers = NUM_WORKERS
     )
+    print(f"{len(train_dataloader), len(val_dataloader), len(test_dataloader)}")
 
 
 if __name__ == "__main__":

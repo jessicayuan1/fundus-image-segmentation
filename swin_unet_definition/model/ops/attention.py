@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from model.ops.window_ops import WindowPartition, WindowReverse
+from .window_ops import WindowPartition, WindowReverse
     
 class WindowAttention(nn.Module):
     """
