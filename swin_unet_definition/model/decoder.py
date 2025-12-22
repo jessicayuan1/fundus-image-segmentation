@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from model.basic_layer import BasicLayer
-from model.expand_merge.patch_expanding import PatchExpanding
+from .basic_layer import BasicLayer
+from .expand_merge.patch_expanding import PatchExpanding
 
 class Decoder(nn.Module):
     """

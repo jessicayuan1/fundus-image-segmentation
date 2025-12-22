@@ -1,8 +1,8 @@
 import torch
 from torch import nn
 
-from model.basic_layer import BasicLayer
-from model.ops.patch_ops import PatchPartition, LinearEmbedding
+from .basic_layer import BasicLayer
+from .ops.patch_ops import PatchPartition, LinearEmbedding
 
 
 class Encoder(nn.Module):

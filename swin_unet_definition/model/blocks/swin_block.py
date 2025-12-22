@@ -1,7 +1,7 @@
 import torch
 from torch import nn
-from model.ops.attention import ShiftedWindowAttention, WindowAttention
-from model.ops.window_ops import WindowReverse, WindowPartition
+from ..ops.attention import ShiftedWindowAttention, WindowAttention
+from ..ops.window_ops import WindowReverse, WindowPartition
 
 class SwinTransformerBlock(nn.Module):
     """
