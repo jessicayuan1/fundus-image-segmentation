@@ -47,7 +47,7 @@ def test_training_validation():
          #depths=[2, 2, 6, 2],
          #img_size=IMG_SIZE
     #).to(device)
-
+    #Just testing params
     optimizer = torch.optim.Adam(params=model.parameters(), lr=1e-5)
     criterion = FocalTverskyLoss(alpha=0.5, beta=0.5, gamma=1.3)
 

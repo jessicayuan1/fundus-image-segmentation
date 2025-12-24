@@ -11,6 +11,7 @@ def train_one_epoch(model, dataloader, optimizer, criterion, device, n_classes=5
     class_recalls = [[] for _ in range(n_classes)]
 
     #loop = tqdm(dataloader, desc="Training", leave=False) Optional for viewing
+    #Replace dataloader with loop if using tqdm
     for imgs, masks in dataloader:
         imgs = imgs.to(device)
         masks = masks.to(device)
