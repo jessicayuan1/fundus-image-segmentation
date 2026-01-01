@@ -22,7 +22,7 @@ import torch.optim as optim
 from swin_unet_definition.model.swin_unet import SwinUNet
 from CMAC_net_definition.model.CMAC import CMACNet
 from data_loader import get_fundus_dataloaders
-from loss_functions import FocalTverskyLoss
+from loss_functions import FocalTverskyLoss, DualLoss, BCEwithLogitsLossMultiLabel
 from training_loop import train_one_epoch
 from valid_loop import valid_one_epoch
 
