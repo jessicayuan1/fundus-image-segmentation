@@ -2,6 +2,9 @@
 
 This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for Diabetic Retinopathy, LA-Net, into HydraLA-Net.
 
+![Model Architecture](model_training/utils/assets/HydraLA-Net.png)
+*Model Architecture Hand-Drawn by Michael Liu using Goodnotes and Inkscape*
+
 ### Project Contributors
 **Jessian Yuan**
 - Technical Project Manager
@@ -35,6 +38,8 @@ This project investigates techniques for improving microaneurysm segmentation in
 
 **Sidharth Shah**
 
+**Apisan Kaneshan**
+
 ### Overview
 
 This repository contains work in progress on the **semantic segmentation of microaneurysms, hemorrhages, soft exudates, and hard exudates** (lesions resulting from Diabetic Retinopathy) from fundus images. In addition to building the full segmentation pipeline, the project also conducts experimentation on techniques for enchancing the detection of microaneurysms. 
@@ -45,7 +50,7 @@ This repository contains work in progress on the **semantic segmentation of micr
 
 ### Research Focus
 Our research primarily focuses on:
-- **Contrast enhancement strategies** to improve lesion visibility, including channel-aware selectice preprocessing (CASP) and local contrast normalization (CLAHE).
+- **Contrast enhancement strategies** to improve lesion visibility, including channel-aware selective preprocessing (CASP) and local contrast normalization (CLAHE).
 - **Training-time techniques** to improve sensitivity to small structures, including loss functions designed to emphasize microaneurysm recall.
 
 ![CLAHE Demo](model_training/utils/assets/clahe_demo2.png)
@@ -60,8 +65,8 @@ Our research primarily focuses on:
 - [x] HydraLA-Net Implementation in PyTorch
 - [x] Training Scripts 
 - [x] Part 1: Baseline Training
-- [ ] Part 2: Preprocessing Variation Analysis
-- [ ] Part 3: Class Imbalance Aware Loss Function Analaysis
+- [x] Part 2: Preprocessing Variation Analysis
+- [x] Part 3: Class Imbalance Aware Loss Function Analaysis
 - [ ] Part 4: Explicit Scalar Reweighting of Per-Class Loss Analysis
 - [ ] Get results on testing sets
 - [ ] Publish research paper!
