@@ -97,8 +97,8 @@ def get_fundus_dataloaders(
 
 if __name__ == "__main__":
     train_loader, val_loader, test_loader = get_fundus_dataloaders(
-        resolution = 512,
-        batch_size = 16,
+        resolution = 1024,
+        batch_size = 2,
         data_csv_dir = "data_csv",
         use_clahe = True,
         clahe_clip = 2.0,

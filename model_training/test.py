@@ -8,6 +8,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 
 from HydraLANet_Definition.model.hydralanet import HydraLANet
+from HydraLANet_Definition.model.lanet_original import LANet
 from model_training.data_loader import get_fundus_dataloaders
 from model_training.utils.multilabel_metrics import (
     calculate_f1_per_class,
@@ -18,15 +19,16 @@ from model_training.valid_loop import valid_one_epoch
 
 device = 'cuda' if torch.cuda.is_available() else "cpu"
 
-model = HydraLANet(snapshot = "../../runs/baseline/best_model.pt").to(device)
+model = HydraLANet(snapshot = "../../runs/4B/best_model.pt").to(device)
+#model = LANet(snapshot = "../../runs/1B/best_model.pt").to(device)
 
 _, _, test_dataloader = get_fundus_dataloaders(
     resolution = 1024,
     batch_size = 2,
     data_csv_dir = "data_csv",
-    use_clahe = False,
+    use_clahe = True,
     clahe_clip = 1.5,
-    clahe_mode = 'lab',
+    clahe_mode = 'green',
     pin_memory = False,
     num_workers = 8,
 )
