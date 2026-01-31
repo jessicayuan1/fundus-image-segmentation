@@ -1,5 +1,6 @@
 import torch
 from HydraLANet_Definition.model.hydralanet import HydraLANet
+from HydraLANet_Definition.model.lanet_original import LANet
 
 def main():
     # Dummy RGB input
@@ -10,11 +11,13 @@ def main():
         n_channels = 3
     )
 
-    model.eval()
+    model2 = LANet()
+
+    model2.eval()
 
     # Forward Pass
     with torch.no_grad():
-        out = model(x)
+        out = model2(x)
 
     # Print Shapes
     print("Input shape :", x.shape)

@@ -1,0 +1,10 @@
+torch
+torchvision
+pandas
+opencv-python
+matplotlib
+scikit-learn
+albumentations
+numpy
+tqdm
+Pillow

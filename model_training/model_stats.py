@@ -21,6 +21,8 @@ def analyze_model(model: nn.Module):
 
 if __name__ == "__main__":
     from HydraLANet_Definition.model.hydralanet import HydraLANet
-    model = HydraLANet()
+    from HydraLANet_Definition.model.lanet_original import LANet
+    #model = HydraLANet()
+    model = LANet()
 
     analyze_model(model = model)

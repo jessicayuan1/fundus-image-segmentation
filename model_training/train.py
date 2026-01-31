@@ -23,6 +23,7 @@ import numpy as np
 
 # Local Imports
 from HydraLANet_Definition.model.hydralanet import HydraLANet
+from HydraLANet_Definition.model.lanet_original import LANet
 from model_training.data_loader import get_fundus_dataloaders
 from model_training.loss_functions import (
     FocalTverskyLoss,
@@ -33,10 +34,10 @@ from model_training.training_loop import train_one_epoch
 from model_training.valid_loop import valid_one_epoch
 
 # =============== Global Constants =================
-MODEL_NAME = "2A"
+MODEL_NAME = "4B"
 
 IMG_SIZE = 1024
-DEFAULT_EPOCHS = 150
+DEFAULT_EPOCHS = 125
 LEARNING_RATE = 1e-5
 DEFAULT_SEED = 42
 
@@ -46,16 +47,16 @@ NUM_WORKERS = 8
 W_FTL = 0.8
 W_BCE = 0.2
 
-TVERSKY_ALPHA = 0.5
-TVERSKY_BETA = 0.5
+TVERSKY_ALPHA = [0.4, 0.4, 0.2, 0.4]
+TVERSKY_BETA = [0.6, 0.6, 0.8, 0.6]
 TVERSKY_GAMMA = 2
 SMOOTH = 1e-6
 
 CLAHE_ON = True
 CLAHE_CLIP = 1.5
-CLAHE_MODE = 'lab'
+CLAHE_MODE = 'green'
 
-CLASS_WEIGHTS = [1.0, 1.0, 1.0, 1.0]
+CLASS_WEIGHTS = [1.0, 1.0, 5.0, 1.0]
 THRESHOLDS = [0.35, 0.35, 0.35, 0.35]
 
 OUT_CHANNELS = 4
@@ -76,6 +77,7 @@ def main():
 
     # ============== Model ===============
     model = HydraLANet()
+    #model = LANet()
     model = model.to(device)
     # ===== Freeze BatchNorm running stats (Due to low batch size) =====
     def freeze_bn(module):

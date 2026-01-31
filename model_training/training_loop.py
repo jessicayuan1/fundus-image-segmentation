@@ -4,7 +4,6 @@ The model must already have applied the sigmoid function.
 """
 
 import torch
-import tqdm
 import numpy as np
 from model_training.utils.multilabel_metrics import (
     calculate_iou_per_class,
