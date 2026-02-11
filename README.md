@@ -1,4 +1,4 @@
-# **Enhancing Microaneurysm Segmentation in Retinal Fundus Imaging with HydraLA-Net @ WAT.ai**
+# **Enhancing Microaneurysm Segmentation in Retinal Fundus Imaging with HydraLA-Net**
 
 This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for Diabetic Retinopathy, LA-Net, into HydraLA-Net.
 
@@ -57,7 +57,7 @@ Our research primarily focuses on:
 
 ---
 
-### Project Status/Progress (as of Jan 24 2026)
+### Project Status/Progress (as of Feb 11 2026)
 - [x] Dataset Curation 
 - [x] Preprocessing and Augmentation Pipelines
 - [x] Loss Function Development 
@@ -67,8 +67,8 @@ Our research primarily focuses on:
 - [x] Part 1: Baseline Training
 - [x] Part 2: Preprocessing Variation Analysis
 - [x] Part 3: Class Imbalance Aware Loss Function Analaysis
-- [ ] Part 4: Explicit Scalar Reweighting of Per-Class Loss Analysis
-- [ ] Get results on testing sets
+- [x] Part 4: Individual Dataset Analysis
+- [x] Get results on testing sets
 - [ ] Publish research paper!
 
 ---
