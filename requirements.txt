@@ -8,3 +8,4 @@ albumentations
 numpy
 tqdm
 Pillow
+streamlit
