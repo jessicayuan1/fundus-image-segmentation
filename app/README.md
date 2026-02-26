@@ -1,14 +1,3 @@
----
-title: HydraLA-Net Fundus Segmentation
-emoji: 👁️
-colorFrom: blue
-colorTo: green
-sdk: streamlit
-sdk_version: "1.31.0"
-app_file: app.py
-pinned: false
----
-
 # HydraLA-Net Fundus Image Segmentation
 
 This application performs semantic segmentation of diabetic retinopathy lesions in fundus images using **HydraLA-Net**.
