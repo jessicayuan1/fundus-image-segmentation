@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 from PIL import Image
 
-project_root = Path(__file__).parent.parent
+project_root = Path(__file__).parent
 sys.path.insert(0, str(project_root))
 from HydraLANet_Definition.model.hydralanet import HydraLANet
 CLASS_NAMES = ["EX (Hard Exudates)", "HE (Hemorrhages)", "MA (Microaneurysms)", "SE (Soft Exudates)"]
