@@ -1,4 +1,4 @@
-# HydraLA-Net Fundus Image Segmentation
+# HydraLA-Net Fundus Image Segmentation Application
 
 This application performs semantic segmentation of diabetic retinopathy lesions in fundus images using **HydraLA-Net**.
 
