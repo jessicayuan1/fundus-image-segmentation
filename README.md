@@ -1,4 +1,4 @@
-# **Enhancing Microaneurysm Segmentation in Retinal Fundus Imaging with HydraLA-Net**
+# **Progressive Optimization of HydraLA-Net for Microaneurysm Segmentation @ WAT.ai**
 
 This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for Diabetic Retinopathy, LA-Net, into HydraLA-Net.
 
@@ -6,7 +6,7 @@ This project investigates techniques for improving microaneurysm segmentation in
 *Model Architecture Hand-Drawn by Michael Liu using Goodnotes and Inkscape*
 
 ### Project Contributors
-**Jessian Yuan**
+**Jessica Yuan**
 - Technical Project Manager
 
 **Michael Liu**
@@ -69,13 +69,13 @@ Our research primarily focuses on:
 - [x] Part 3: Class Imbalance Aware Loss Function Analaysis
 - [x] Part 4: Individual Dataset Analysis
 - [x] Get results on testing sets
-- [ ] Publish research paper!
+- [X] Publish research paper!
 
 ---
 
-### Model
+### Model 
 The segmentation architecture used in this project is based directly on the original research paper that introduced it. 
-* **LANet-DR** Paper: [Lesion-Aware Network for Diabetic Retinopathy Diagnosis](https://arxiv.org/abs/2408.07264) 
+* **LA-Net** Paper: [Lesion-Aware Network for Diabetic Retinopathy Diagnosis](https://arxiv.org/abs/2408.07264) 
 
 The GitHub repository containing the experiment conducted in the paper above can be found at:
 [LANet-DR GitHub Repo](https://github.com/xia-xx-cv/LANet-DR/)
