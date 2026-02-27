@@ -73,7 +73,7 @@ Our research primarily focuses on:
 
 ---
 
-### Model
+### Model 
 The segmentation architecture used in this project is based directly on the original research paper that introduced it. 
 * **LA-Net** Paper: [Lesion-Aware Network for Diabetic Retinopathy Diagnosis](https://arxiv.org/abs/2408.07264) 
 
