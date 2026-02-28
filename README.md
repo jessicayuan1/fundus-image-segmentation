@@ -1,6 +1,8 @@
 # **Progressive Optimization of HydraLA-Net for Microaneurysm Segmentation @ WAT.ai**
 
-This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for Diabetic Retinopathy, LA-Net, into HydraLA-Net.
+This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for diabetic retinopathy, LA-Net, into HydraLA-Net.
+
+Read the Paper [HERE!](Progressive_Optimization_of_HydraLA_Net_for_Microaneurysm_Segmentation.pdf)
 
 ![Model Architecture](model_training/utils/assets/HydraLA-Net.png)
 *Model Architecture Hand-Drawn by Michael Liu using Goodnotes and Inkscape*
@@ -57,7 +59,7 @@ Our research primarily focuses on:
 
 ---
 
-### Project Status/Progress (as of Feb 11 2026)
+### Project Status/Progress (as of Feb 28 2026)
 - [x] Dataset Curation 
 - [x] Preprocessing and Augmentation Pipelines
 - [x] Loss Function Development 
@@ -92,7 +94,3 @@ Three datasets are chosen for the project. All datasets contain fundus images an
 
 Dataset Pixel Distributions by Class
 ![Distribution](model_training/utils/assets/pixel_distribution.png)
-
----
-
-### References
