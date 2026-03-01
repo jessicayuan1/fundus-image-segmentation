@@ -159,5 +159,5 @@ HydraLA-Net is an adapted version of LANet for diabetic retinopathy segmentation
 - **MA (Microaneurysms)**: Tiny vessel bulges - shown in Blue
 - **SE (Soft Exudates)**: Cotton-wool spots - shown in Yellow
 
-For more information, see the [README](https://github.com/yourusername/fundus-image-segmentation).
+For more information, see the [README](https://github.com/jessicayuan1/fundus-image-segmentation).
 """)
