@@ -102,7 +102,7 @@ if uploaded_file is not None:
 
     with col1:
         st.subheader("📤 Original Image")
-        st.image(image_rgb, caption="Original Image", width='stretch')
+        st.image(image_rgb, caption="Original Image", use_container_width=True)
 
     with col2:
         st.subheader("📊 Segmentation Results")
@@ -120,7 +120,7 @@ if uploaded_file is not None:
 
         with col2:
             overlay = create_overlay(image_rgb, output, threshold)
-            st.image(overlay, caption="All Lesions Overlay", width='stretch')
+            st.image(overlay, caption="All Lesions Overlay", use_container_width=True)
 
         st.subheader("🎯 Individual Lesion Masks")
         mask_cols = st.columns(4)
@@ -135,7 +135,7 @@ if uploaded_file is not None:
                 mask_overlay = cv2.addWeighted(image_rgb, 0.6, colored_mask, 0.4, 0)
 
                 # st.image(mask_overlay, caption=name, use_container_width=True)
-                st.image(mask_overlay, caption=name, width='stretch')
+                st.image(mask_overlay, caption=name, use_container_width=True)
 
                 positive_pixels = binary_mask.sum()
                 total_pixels = binary_mask.size
