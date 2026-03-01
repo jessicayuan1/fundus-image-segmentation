@@ -1,3 +1,14 @@
+---
+title: HydraLANet
+emoji: 👁️
+colorFrom: blue
+colorTo: purple
+sdk: streamlit
+sdk_version: 1.28.0
+app_file: app.py
+pinned: false
+---
+
 # **Enhancing Microaneurysm Segmentation in Retinal Fundus Imaging with HydraLA-Net**
 
 This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for Diabetic Retinopathy, LA-Net, into HydraLA-Net.
