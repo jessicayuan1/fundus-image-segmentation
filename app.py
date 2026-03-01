@@ -12,7 +12,8 @@ from HydraLANet_Definition.model.hydralanet import HydraLANet
 CLASS_NAMES = ["EX (Hard Exudates)", "HE (Hemorrhages)", "MA (Microaneurysms)", "SE (Soft Exudates)"]
 CLASS_COLORS = [(255, 0, 0), (0, 255, 0), (0, 0, 255), (255, 255, 0)]
 
-def apply_green_clahe(image_rgb, clip_limit=2.0, tile_grid_size=(8, 8)):
+# def apply_green_clahe(image_rgb, clip_limit=2.0, tile_grid_size=(8, 8)):
+def apply_green_clahe(image_rgb, clip_limit=1.5, tile_grid_size=(8, 8)):
     """Apply CLAHE to green channel only for contrast enhancement"""
     clahe = cv2.createCLAHE(
         clipLimit = clip_limit,
@@ -22,10 +23,9 @@ def apply_green_clahe(image_rgb, clip_limit=2.0, tile_grid_size=(8, 8)):
     out[:, :, 1] = clahe.apply(image_rgb[:, :, 1])
     return out
 
-def preprocess_image(image_rgb, apply_clahe=True):
+def preprocess_image(image_rgb):
     """Preprocess image with CLAHE and ImageNet normalization"""
-    if apply_clahe:
-        image_rgb = apply_green_clahe(image_rgb)
+    image_rgb = apply_green_clahe(image_rgb)
 
     image = image_rgb.astype(np.float32) / 255.0
 
@@ -81,39 +81,36 @@ st.markdown("""
 This application performs semantic segmentation of diabetic retinopathy lesions in fundus images using **HydraLA-Net**.
 """)
 
-with st.sidebar:
-    st.header("⚙️ Configuration")
+# Device info and settings
+device = "mps" if torch.backends.mps.is_available() else \
+         "cuda" if torch.cuda.is_available() else "cpu"
+st.info(f"🖥️ Using device: **{device.upper()}**")
 
-    st.subheader("Preprocessing")
-    apply_clahe = st.checkbox("Apply CLAHE (Contrast Enhancement)", value=True)
+threshold = st.slider("Detection Threshold", 0.01, 1.0, 0.35, 0.05)
 
-    st.subheader("Inference Settings")
-    threshold = st.slider("Detection Threshold", 0.0, 1.0, 0.35, 0.05)
-
-    device = "mps" if torch.backends.mps.is_available() else \
-             "cuda" if torch.cuda.is_available() else "cpu"
-    st.info(f"🖥️ Using device: **{device.upper()}**")
-col1, col2 = st.columns([1, 1])
-
-with col1:
-    st.subheader("📤 Upload Fundus Image")
-    uploaded_file = st.file_uploader(
-        "Choose a fundus image",
-        type=["png", "jpg", "jpeg"],
-        help="Upload a retinal fundus image for segmentation"
-    )
+uploaded_file = st.file_uploader(
+    "Choose a fundus image",
+    type=["png", "jpg", "jpeg"],
+    help="Upload a retinal fundus image for segmentation"
+)
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     image_rgb = np.array(image.convert('RGB'))
 
+    col1, col2 = st.columns([1, 1])
+
     with col1:
-        st.image(image_rgb, caption="Original Image", use_container_width=True)
+        st.subheader("📤 Original Image")
+        st.image(image_rgb, caption="Original Image", width='stretch')
+
+    with col2:
+        st.subheader("📊 Segmentation Results")
 
     if st.button("🔍 Segment Image", type="primary"):
         with st.spinner("Loading model and processing image..."):
             model, device = load_model()
-            image_tensor, processed_rgb = preprocess_image(image_rgb, apply_clahe)
+            image_tensor, processed_rgb = preprocess_image(image_rgb)
             image_tensor = image_tensor.to(device)
 
             with torch.no_grad():
@@ -122,9 +119,8 @@ if uploaded_file is not None:
             output = output.squeeze(0).cpu().numpy()
 
         with col2:
-            st.subheader("📊 Segmentation Results")
             overlay = create_overlay(image_rgb, output, threshold)
-            st.image(overlay, caption="All Lesions Overlay", use_container_width=True)
+            st.image(overlay, caption="All Lesions Overlay", width='stretch')
 
         st.subheader("🎯 Individual Lesion Masks")
         mask_cols = st.columns(4)
@@ -138,7 +134,8 @@ if uploaded_file is not None:
                 colored_mask[binary_mask == 1] = color
                 mask_overlay = cv2.addWeighted(image_rgb, 0.6, colored_mask, 0.4, 0)
 
-                st.image(mask_overlay, caption=name, use_container_width=True)
+                # st.image(mask_overlay, caption=name, use_container_width=True)
+                st.image(mask_overlay, caption=name, width='stretch')
 
                 positive_pixels = binary_mask.sum()
                 total_pixels = binary_mask.size
