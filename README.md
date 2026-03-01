@@ -13,7 +13,7 @@ pinned: false
 
 This project investigates techniques for improving microaneurysm segmentation in diabetic retinopathy fundus imaging, where lesions are extremely small and often low-contrast relative to surrounding tissue. We experiment on an adapted version of a previously established segmentation model for Diabetic Retinopathy, LA-Net, into HydraLA-Net.
 
-![Model Architecture](readme_images/HydraLA-Net.png)
+![Model Architecture](model_training/utils/assets/HydraLA-Net.png)
 *Model Architecture Hand-Drawn by Michael Liu using Goodnotes and Inkscape*
 
 ### Project Contributors
@@ -55,7 +55,7 @@ This project investigates techniques for improving microaneurysm segmentation in
 
 This repository contains work in progress on the **semantic segmentation of microaneurysms, hemorrhages, soft exudates, and hard exudates** (lesions resulting from Diabetic Retinopathy) from fundus images. In addition to building the full segmentation pipeline, the project also conducts experimentation on techniques for enchancing the detection of microaneurysms. 
 
-![Fundus Example](readme_images/sample4.png)
+![Fundus Example](model_training/utils/assets/sample4.png)
 
 ---
 
@@ -64,7 +64,7 @@ Our research primarily focuses on:
 - **Contrast enhancement strategies** to improve lesion visibility, including channel-aware selective preprocessing (CASP) and local contrast normalization (CLAHE).
 - **Training-time techniques** to improve sensitivity to small structures, including loss functions designed to emphasize microaneurysm recall.
 
-![CLAHE Demo](readme_images/clahe_demo2.png)
+![CLAHE Demo](model_training/utils/assets/clahe_demo2.png)
 
 ---
 
@@ -102,7 +102,7 @@ Three datasets are chosen for the project. All datasets contain fundus images an
 * **TJDR**: [TJDR: A High-Quality Diabetic Retinopathy Pixel-Level Annotation Dataset from GitHub](https://github.com/NekoPii/TJDR)
 
 Dataset Pixel Distributions by Class
-![Distribution](readme_images/pixel_distribution.png)
+![Distribution](model_training/utils/assets/pixel_distribution.png)
 
 ---
 
