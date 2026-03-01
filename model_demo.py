@@ -14,7 +14,7 @@ from HydraLANet_Definition.model.hydralanet import HydraLANet
 
 # Configs
 MODEL_PATH = "../../best_model.pt"
-IMAGE_PATH = "TJDR/train/image/TJDR_train_448.png"
+IMAGE_PATH = "model_training/utils/assets/TJDR_test_004.png"
 DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
 THRESHOLD = 0.35
 

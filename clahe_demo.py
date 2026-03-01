@@ -23,7 +23,7 @@ def apply_preprocessing(
 
 
 # Image Path
-image_path = "IDRID/Original_Images/train/IDRiD_25.jpg"
+image_path = "model_training/utils/assets/TJDR_test_004.png"
 
 image_bgr = cv2.imread(image_path, cv2.IMREAD_COLOR)
 image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
