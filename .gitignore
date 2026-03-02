@@ -8,3 +8,4 @@ train.sh
 runs
 best_model.pt
 .github
+.env
