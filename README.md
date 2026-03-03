@@ -4,41 +4,24 @@ This project investigates techniques for improving microaneurysm segmentation in
 
 Read the Paper [HERE!](Progressive_Optimization_of_HydraLA_Net_for_Microaneurysm_Segmentation.pdf)
 
+Visit our Deployed App [HERE!](https://huggingface.co/spaces/Sidharth6Shah/HydraLANet)
+
 ![Model Architecture](model_training/utils/assets/HydraLA-Net.png)
-*Model Architecture Hand-Drawn by Michael Liu using Goodnotes and Inkscape*
 
 ### Project Contributors
-**Jessica Yuan**
-- Technical Project Manager
+**Jessica Yuan** - Technical Project Manager
 
-**Michael Liu**
-- Defined and Finalized the Primary Research Objective
-- Model Architecture and Model Modifications
-- Model Training (WATGPU via SSH)
-- Loss Functions and Class-Imbalance Strategy
-- Dataset Curation, Preprocessing & Augmentations
-- Metrics Design & Evalutation Protocols
-- Documentation (README.md)
-- Drafting of the Final Published Research Paper
-- Consulted on Dataset Clarifications with University of Waterloo School of Optometry Faculty Members
+**Michael Liu** - Experimental Design, Model Architecture & Modifications, Model Training (WATGPU via SSH), Loss Functions, Dataset Curation, Preprocessing & Augmentations, Documentation (README.md), Consulted with UWaterloo School of Optometry, Technical Diagrams & Visualizations
 
-**Andrew Yang**
-- Defined and Finalized the Primary Research Objective
-- Model Training (WATGPU via SSH)
-- Model Architecture Selection
-- Model Architecture Visualization and Figures for Research Paper
-- Literature Review and Research on Related Works
-- Dataset Curation
-- Drafting of the Final Published Research Paper
+**Andrew Yang** - Experimental Design, Model Training (WATGPU via SSH), Model Architecture,Literature Review and Research on Related Works, Dataset Curation, Research Paper Writing
 
-**Christopher Risi**
-- Technical Support
+**Sidharth Shah** - App Deployment, Research Paper Writing
 
-**William Chiu**
+**Christopher Risi** - Technical Support
+
+**William Chiu** - Research Paper Writing, Loss Function Development & Analysis
 
 **Tom Almog**
-
-**Sidharth Shah**
 
 **Apisan Kaneshan**
 
@@ -59,7 +42,7 @@ Our research primarily focuses on:
 
 ---
 
-### Project Status/Progress (as of Feb 28 2026)
+### Project Status/Progress (as of Mar 3 2026)
 - [x] Dataset Curation 
 - [x] Preprocessing and Augmentation Pipelines
 - [x] Loss Function Development 
