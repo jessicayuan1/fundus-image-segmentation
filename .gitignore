@@ -9,3 +9,4 @@ runs
 best_model.pt
 .github
 .env
+posts/
